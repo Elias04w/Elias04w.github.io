@@ -3,341 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukokis Boxing | Boxen in Erftstadt</title>
+    <title>Lukokis Boxing | Erftstadt</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Bold Boxing Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#0B0B0C',
-                        brandCard: '#151518',
-                        brandRed: '#E60000',
-                        brandRedDark: '#990000',
+                        boxingRed: '#dc2626',
+                        boxingDark: '#09090b',
+                        boxingCard: '#18181b',
+                        boxingBorder: '#27272a'
                     },
                     fontFamily: {
-                        oswald: ['Oswald', 'sans-serif'],
                         sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .hero-bg {
-            background: linear-gradient(180deg, rgba(11,11,12,0.85) 0%, rgba(230,0,0,0.25) 50%, rgba(11,11,12,1) 100%), 
-                        url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
         }
-        .red-glow {
-            box-shadow: 0 0 25px rgba(230, 0, 0, 0.35);
-        }
-        .text-outline {
-            -webkit-text-stroke: 1px #FFFFFF;
-            color: transparent;
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(9,9,11,0.75) 0%, rgba(9,9,11,0.98) 100%), radial-gradient(circle at center, rgba(220,38,38,0.2) 0%, transparent 70%);
         }
     </style>
 </head>
-<body class="bg-brandDark text-white font-sans antialiased selection:bg-brandRed selection:text-white flex flex-col min-h-screen">
+<body class="bg-boxingDark text-zinc-100 font-sans antialiased selection:bg-boxingRed selection:text-white">
 
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-brandDark/90 backdrop-blur-md border-b border-white/10">
+    <!-- Top Announcement Bar -->
+    <div class="bg-boxingRed text-white text-xs sm:text-sm font-bold py-2 px-4 text-center uppercase tracking-wider shadow-md">
+        🔥 100% Boxsport • Jeder ist willkommen: Freizeit & Ambition • <span class="underline">Gratis Probetraining jederzeit</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-boxingDark/95 backdrop-blur border-b border-boxingBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#home" class="flex flex-col items-start group">
-                <div class="flex items-center space-x-1 text-brandRed text-xs tracking-widest">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-boxingRed text-white font-oswald text-2xl tracking-wider px-3 py-1 rounded shadow-lg">LB</div>
+                <div>
+                    <span class="font-oswald text-xl sm:text-2xl tracking-wide uppercase block leading-none">Lukokis Boxing</span>
+                    <span class="text-xs text-zinc-400 font-semibold tracking-widest uppercase">Erftstadt</span>
                 </div>
-                <span class="font-oswald text-2xl sm:text-3xl font-bold tracking-wider text-white group-hover:text-brandRed transition-colors">LUKOKIS <span class="text-brandRed">BOXING</span></span>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wider font-semibold">
-                <a href="#home" class="hover:text-brandRed transition-colors">Home</a>
-                <a href="#about" class="hover:text-brandRed transition-colors">Über uns</a>
-                <a href="#training" class="hover:text-brandRed transition-colors">Trainingszeiten</a>
-                <a href="#coaches" class="hover:text-brandRed transition-colors">Trainer</a>
-                <a href="#prices" class="hover:text-brandRed transition-colors">Preise</a>
-                <a href="#contact" class="hover:text-brandRed transition-colors">Kontakt</a>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">
+                <a href="#start" class="hover:text-boxingRed transition-colors">Start</a>
+                <a href="#about" class="hover:text-boxingRed transition-colors">Über uns</a>
+                <a href="#zeiten" class="hover:text-boxingRed transition-colors">Trainingszeiten</a>
+                <a href="#trainer" class="hover:text-boxingRed transition-colors">Trainer</a>
+                <a href="#preise" class="hover:text-boxingRed transition-colors">Beiträge</a>
+                <a href="#kontakt" class="hover:text-boxingRed transition-colors">Kontakt</a>
             </nav>
 
-            <!-- CTA Header Button -->
-            <a href="#training" class="hidden sm:inline-flex items-center justify-center bg-brandRed hover:bg-brandRedDark text-white font-oswald uppercase font-bold px-5 py-2.5 rounded text-sm tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-brandRed/20">
-                <i class="fa-solid fa-glove-boxing mr-2"></i> Komm Vorbei
-            </a>
+            <!-- Actions / Insta / CTA -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://www.instagram.com/lukokisboxing" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-zinc-900 border border-boxingBorder flex items-center justify-center text-zinc-300 hover:text-white hover:bg-boxingRed hover:border-boxingRed transition-all">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+                <a href="#kontakt" class="bg-boxingRed text-white font-oswald tracking-wide px-5 py-2.5 rounded uppercase hover:bg-red-700 transition-all shadow-md shadow-red-900/30">
+                    Komm vorbei
+                </a>
+            </div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-2xl focus:outline-none p-2 text-white hover:text-brandRed">
-                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-zinc-300 hover:text-white text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-brandCard border-b border-white/10 px-4 pt-2 pb-6 space-y-3 font-oswald text-lg uppercase tracking-wider">
-            <a href="#home" class="block py-2 text-white hover:text-brandRed mobile-link">Home</a>
-            <a href="#about" class="block py-2 text-white hover:text-brandRed mobile-link">Über uns</a>
-            <a href="#training" class="block py-2 text-white hover:text-brandRed mobile-link">Trainingszeiten</a>
-            <a href="#coaches" class="block py-2 text-white hover:text-brandRed mobile-link">Trainer</a>
-            <a href="#prices" class="block py-2 text-white hover:text-brandRed mobile-link">Preise</a>
-            <a href="#contact" class="block py-2 text-white hover:text-brandRed mobile-link">Kontakt</a>
-            <a href="#training" class="block w-full text-center bg-brandRed py-3 rounded font-bold text-white uppercase mobile-link mt-4">
-                Komm vorbei
-            </a>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-boxingCard border-b border-boxingBorder px-6 py-6 space-y-4">
+            <a href="#start" class="block font-semibold text-sm uppercase tracking-wider hover:text-boxingRed">Start</a>
+            <a href="#about" class="block font-semibold text-sm uppercase tracking-wider hover:text-boxingRed">Über uns</a>
+            <a href="#zeiten" class="block font-semibold text-sm uppercase tracking-wider hover:text-boxingRed">Trainingszeiten</a>
+            <a href="#trainer" class="block font-semibold text-sm uppercase tracking-wider hover:text-boxingRed">Trainer</a>
+            <a href="#preise" class="block font-semibold text-sm uppercase tracking-wider hover:text-boxingRed">Beiträge</a>
+            <a href="#kontakt" class="block font-semibold text-sm uppercase tracking-wider hover:text-boxingRed">Kontakt</a>
+            <div class="pt-4 flex items-center justify-between border-t border-boxingBorder">
+                <a href="https://www.instagram.com/lukokisboxing" target="_blank" class="text-zinc-300 hover:text-boxingRed flex items-center gap-2 text-sm font-semibold">
+                    <i class="fa-brands fa-instagram text-xl"></i> Instagram folgen
+                </a>
+                <a href="#kontakt" class="bg-boxingRed text-white font-oswald px-4 py-2 rounded uppercase text-sm">Komm vorbei</a>
+            </div>
         </div>
     </header>
 
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+
     <!-- Hero Section -->
-    <section id="home" class="hero-bg relative pt-32 pb-20 md:pt-44 md:pb-32 flex items-center justify-center min-h-screen">
-        <div class="max-w-5xl mx-auto px-4 text-center z-10">
-            <!-- Alert Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brandRed/20 border border-brandRed text-brandRed font-semibold text-xs sm:text-sm uppercase tracking-widest mb-6 animate-pulse">
-                <i class="fa-solid fa-location-dot"></i> Neuer Standpunkt: Tanzschule Latus (Erftstadt)
+    <section id="start" class="relative min-h-[90vh] flex items-center justify-center hero-gradient px-4 py-20 border-b border-boxingBorder">
+        <div class="absolute inset-0 -z-10 overflow-hidden opacity-30">
+            <!-- Unsplash Hero Boxing Stock Photo -->
+            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1920&auto=format&fit=crop" alt="Lukokis Boxing Hero" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <div class="inline-flex items-center gap-2 bg-red-600/20 border border-boxingRed/50 px-4 py-1.5 rounded-full text-boxingRed font-semibold text-xs sm:text-sm uppercase tracking-widest backdrop-blur-sm">
+                <i class="fa-solid fa-fire"></i> <span>Gratis Probetraining für alle</span>
             </div>
-
-            <!-- Main Headline -->
-            <h1 class="font-oswald text-5xl sm:text-7xl md:text-8xl font-bold uppercase tracking-tight leading-none mb-6">
-                TRAINIERE BEI WAHREN <span class="text-brandRed">BOXPROFIS</span>
+            <h1 class="font-oswald text-4xl sm:text-6xl lg:text-7xl uppercase tracking-wider font-extrabold leading-none">
+                Disziplin. Kraft. <span class="text-boxingRed">Gemeinschaft.</span>
             </h1>
-
-            <p class="text-lg sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
-                Jedes Alter und jedes Level ist willkommen – vom Anfänger & Freizeitsportler bis zum ambitionierten Wettkämpfer.
+            <p class="text-zinc-300 text-base sm:text-xl max-w-2xl mx-auto font-medium">
+                Egal ob Freizeitsportler oder ambitionierter Athlet – bei Lukokis Boxing in Erftstadt trainierst du mit echten Profis. Ohne Bürokratie, einfach vorbeikommen.
             </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-                <a href="#training" class="w-full sm:w-auto bg-brandRed hover:bg-brandRedDark text-white font-oswald text-xl uppercase font-bold px-8 py-4 rounded red-glow transition-all transform hover:scale-105 flex items-center justify-center">
-                    <i class="fa-solid fa-bolt mr-3"></i> Komm Vorbei
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#kontakt" class="w-full sm:w-auto bg-boxingRed text-white font-oswald tracking-widest text-lg px-8 py-4 rounded uppercase hover:bg-red-700 transition-all shadow-xl shadow-red-900/40 text-center">
+                    Komm vorbei (Gratis Probetraining)
                 </a>
-                <a href="https://www.instagram.com/lukokisboxing" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-transparent border-2 border-white/30 hover:border-white text-white font-oswald text-xl uppercase font-bold px-8 py-4 rounded transition-all flex items-center justify-center">
-                    <i class="fa-brands fa-instagram mr-3 text-brandRed"></i> Instagram
+                <a href="#zeiten" class="w-full sm:w-auto bg-boxingCard border border-boxingBorder text-zinc-200 font-oswald tracking-widest text-lg px-8 py-4 rounded uppercase hover:bg-zinc-800 transition-all text-center">
+                    Trainingszeiten ansehen
                 </a>
             </div>
-
-            <p class="text-sm text-gray-400 font-medium">
-                <i class="fa-solid fa-circle-check text-brandRed mr-1"></i> Keine komplizierte Voranmeldung nötig – Einfach beim nächsten Training vorbeikommen!
-            </p>
-        </div>
-    </section>
-
-    <!-- Countdown / Live Status Banner -->
-    <div class="bg-brandRed text-white py-4 px-4 shadow-lg border-y border-white/20">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-clock text-2xl"></i>
-                <span class="font-oswald text-xl uppercase font-bold tracking-wide">Nächstes Training:</span>
-                <span id="nextSessionText" class="font-semibold text-lg underline underline-offset-4">Wird geladen...</span>
-            </div>
-            <div id="countdownTimer" class="font-oswald text-2xl font-bold tracking-wider bg-black/40 px-4 py-1.5 rounded border border-white/20">
-                00d 00h 00m
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 1: Über Uns -->
-    <section id="about" class="py-20 bg-brandDark relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-brandRed font-oswald text-lg font-bold uppercase tracking-widest">Leidenschaft & Disziplin</span>
-                    <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-tight mt-2 mb-6">
-                        WILLKOMMEN BEI <span class="text-brandRed">LUKOKIS BOXING</span>
-                    </h2>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                        Egal ob du deine Ausdauer verbessern, Stress abbauen, Selbstbewusstsein tanken oder deine Fähigkeiten im Ring auf das nächste Level heben willst: Bei uns bist du richtig.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed mb-8">
-                        Wir setzen auf echte Boxkunst, professionelle Betreuung und eine starke Gemeinschaft in Erftstadt. Hier trainiert der Anfänger Seite an Seite mit dem Profi – respektvoll, motivierend und hart.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check text-brandRed text-2xl"></i>
-                            <span class="font-oswald text-lg uppercase font-semibold">Profi Coaching</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check text-brandRed text-2xl"></i>
-                            <span class="font-oswald text-lg uppercase font-semibold">Für alle Level</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check text-brandRed text-2xl"></i>
-                            <span class="font-oswald text-lg uppercase font-semibold">Top Gemeinschaft</span>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fa-solid fa-check text-brandRed text-2xl"></i>
-                            <span class="font-oswald text-lg uppercase font-semibold">Erftstadt</span>
-                        </div>
-                    </div>
+            <div class="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+                <div class="bg-boxingCard/90 border border-boxingBorder p-4 rounded-xl backdrop-blur-md">
+                    <span class="text-boxingRed font-oswald text-xl block">01. Standort</span>
+                    <span class="text-zinc-400 text-sm">Tanzschule Latus, Erftstadt</span>
                 </div>
-                <div class="relative">
-                    <div class="aspect-square rounded-xl overflow-hidden border-2 border-brandRed/40 shadow-2xl relative group">
-                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop" alt="Boxhandschuhe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-4 bg-brandCard/90 backdrop-blur rounded border border-white/10">
-                            <p class="font-oswald text-xl uppercase font-bold text-white">„Schweiß ist Fett, das weint.“</p>
-                            <p class="text-xs text-brandRed font-semibold tracking-wider mt-1">- LUKOKIS BOXING PHILOSOPHIE</p>
-                        </div>
-                    </div>
+                <div class="bg-boxingCard/90 border border-boxingBorder p-4 rounded-xl backdrop-blur-md">
+                    <span class="text-boxingRed font-oswald text-xl block">02. Preis</span>
+                    <span class="text-zinc-400 text-sm">Nur 35 € / Monat (Keine 10er-Karten)</span>
+                </div>
+                <div class="bg-boxingCard/90 border border-boxingBorder p-4 rounded-xl backdrop-blur-md">
+                    <span class="text-boxingRed font-oswald text-xl block">03. Level</span>
+                    <span class="text-zinc-400 text-sm">Freizeit & Ambitionierte</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Trainingszeiten & Ort -->
-    <section id="training" class="py-20 bg-brandCard relative border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandRed font-oswald text-lg font-bold uppercase tracking-widest">Wann & Wo</span>
-                <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-tight mt-2">
-                    TRAININGSZEITEN & <span class="text-brandRed">LOCATION</span>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-boxingDark border-b border-boxingBorder">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="text-boxingRed font-oswald uppercase tracking-widest text-sm">Über den Verein</div>
+                <h2 class="font-oswald text-3xl sm:text-5xl uppercase tracking-wide font-bold">
+                    Harte Arbeit zahlt sich aus. <span class="text-boxingRed">Keine Ausreden.</span>
                 </h2>
-                <p class="text-gray-400 mt-4 text-lg">Komm einfach pünktlich in Trainingskleidung vorbei!</p>
+                <p class="text-zinc-300 leading-relaxed font-normal">
+                    Bei Lukokis Boxing steht der echte Sport im Mittelpunkt. Wir bieten intensives Box- und Fitnesstraining, das dich körperlich und mental stärkt – von Technik über Ausdauer bis Sparring.
+                </p>
+                <p class="text-zinc-300 leading-relaxed font-normal">
+                    Ob du einfach deinen Kopf freibekommen willst, Fett verbrennen oder Wettkampf-Ambitionen hast: Bei uns bist du Teil einer echten Gemeinschaft. Pack deine Sportsachen ein und mach beim <strong class="text-white">Gratis Probetraining</strong> mit!
+                </p>
+                <div class="flex items-center gap-6 pt-2">
+                    <div>
+                        <span class="block font-oswald text-3xl text-boxingRed">100%</span>
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Echter Boxsport</span>
+                    </div>
+                    <div class="w-px h-12 bg-boxingBorder"></div>
+                    <div>
+                        <span class="block font-oswald text-3xl text-boxingRed">35 €</span>
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Monatsbeitrag</span>
+                    </div>
+                    <div class="w-px h-12 bg-boxingBorder"></div>
+                    <div>
+                        <span class="block font-oswald text-3xl text-boxingRed">Gratis</span>
+                        <span class="text-xs text-zinc-400 uppercase tracking-wider font-semibold">Erstes Training</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-video sm:aspect-square bg-boxingCard border border-boxingBorder rounded-2xl overflow-hidden relative shadow-2xl">
+                    <!-- Unsplash Gym/Training Stock Photo -->
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1000&auto=format&fit=crop" alt="Boxen Gym Equipment" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-boxingDark via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="bg-boxingRed text-white text-xs font-bold uppercase px-3 py-1 rounded">Erftstadt</span>
+                        <h3 class="font-oswald text-2xl uppercase mt-2">Tanzschule Latus</h3>
+                        <p class="text-sm text-zinc-300">Herriger Str. 25, 50321 Erftstadt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainingszeiten & Ort -->
+    <section id="zeiten" class="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-boxingBorder">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-boxingRed font-oswald uppercase tracking-widest text-sm">Wann & Wo</span>
+                <h2 class="font-oswald text-3xl sm:text-5xl uppercase tracking-wide font-bold">Trainingszeiten & Standort</h2>
+                <p class="text-zinc-400 max-w-xl mx-auto">Keine Voranmeldung nötig – komm einfach pünktlich in Trainingskleidung vorbei!</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8 mb-12">
-                <!-- Session 1: Montag -->
-                <div class="bg-brandDark p-8 rounded-xl border border-white/10 hover:border-brandRed/50 transition-all shadow-xl flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="text-brandRed font-oswald text-sm font-bold uppercase tracking-widest">Wochenanfang</span>
-                                <h3 class="font-oswald text-3xl font-bold uppercase text-white mt-1">Montag</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Standort Info Card -->
+                <div class="bg-boxingCard border border-boxingBorder p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-boxingRed/10 border border-boxingRed/30 flex items-center justify-center text-boxingRed text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-oswald text-2xl uppercase tracking-wide">Trainingsort</h3>
+                        <p class="text-zinc-300 font-medium">
+                            <strong class="text-white block text-lg mb-1">Tanzschule Latus</strong>
+                            Herriger Str. 25<br>
+                            50321 Erftstadt
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-boxingBorder">
+                        <span class="text-xs text-boxingRed uppercase font-bold tracking-wider block mb-1">Was mitbringen?</span>
+                        <p class="text-xs text-zinc-400">Sportbekleidung, saubere Turnschuhe, Handtuch & Trinkflasche.</p>
+                    </div>
+                </div>
+
+                <!-- Schedule Card -->
+                <div class="bg-boxingCard border border-boxingBorder p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-boxingRed/10 border border-boxingRed/30 flex items-center justify-center text-boxingRed text-xl">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <h3 class="font-oswald text-2xl uppercase tracking-wide">Reguläre Zeiten</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center pb-3 border-b border-boxingBorder">
+                                <span class="font-semibold text-zinc-200">Montag</span>
+                                <span class="bg-zinc-900 px-3 py-1 rounded text-boxingRed font-oswald tracking-wider">18:00 Uhr</span>
                             </div>
-                            <span class="bg-brandRed/20 text-brandRed border border-brandRed font-oswald text-xl font-bold px-4 py-2 rounded">
-                                18:00 UHR
-                            </span>
-                        </div>
-                        <p class="text-gray-300 mb-6">
-                            Intensives Boxtraining mit Schwerpunkten auf Technik, Grundschule, Beinarbeit und Ausdauer.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-sm text-gray-400">
-                        <span><i class="fa-solid fa-users text-brandRed mr-2"></i>Alle Levels</span>
-                        <span><i class="fa-solid fa-stopwatch text-brandRed mr-2"></i>ca. 90 Minuten</span>
-                    </div>
-                </div>
-
-                <!-- Session 2: Samstag -->
-                <div class="bg-brandDark p-8 rounded-xl border border-white/10 hover:border-brandRed/50 transition-all shadow-xl flex flex-col justify-between">
-                    <div>
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <span class="text-brandRed font-oswald text-sm font-bold uppercase tracking-widest">Wochenende</span>
-                                <h3 class="font-oswald text-3xl font-bold uppercase text-white mt-1">Samstag</h3>
+                            <div class="flex justify-between items-center pb-3 border-b border-boxingBorder">
+                                <span class="font-semibold text-zinc-200">Samstag</span>
+                                <span class="bg-zinc-900 px-3 py-1 rounded text-boxingRed font-oswald tracking-wider">12:00 Uhr</span>
                             </div>
-                            <span class="bg-brandRed/20 text-brandRed border border-brandRed font-oswald text-xl font-bold px-4 py-2 rounded">
-                                12:00 UHR
-                            </span>
-                        </div>
-                        <p class="text-gray-300 mb-6">
-                            Wochenend-Power: Sparring, Partnerübungen, Pratzenarbeit und athletisches Konditionstraining.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 flex items-center justify-between text-sm text-gray-400">
-                        <span><i class="fa-solid fa-users text-brandRed mr-2"></i>Alle Levels</span>
-                        <span><i class="fa-solid fa-stopwatch text-brandRed mr-2"></i>ca. 90 Minuten</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Location Card -->
-            <div class="bg-gradient-to-r from-brandDark via-brandCard to-brandDark p-8 rounded-xl border-2 border-brandRed/30 shadow-2xl">
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <div class="md:col-span-2">
-                        <span class="inline-block bg-brandRed text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-3">
-                            <i class="fa-solid fa-map-pin mr-1"></i> Trainingsort
-                        </span>
-                        <h3 class="font-oswald text-3xl font-bold uppercase text-white mb-2">Tanzschule Latus</h3>
-                        <p class="text-xl text-gray-200 font-semibold mb-4">Herriger Str. 25, 50374 Erftstadt (Lechenich)</p>
-                        <p class="text-gray-400 text-sm">
-                            Helle, geräumige Trainingsräume. Umkleiden vor Ort vorhanden. Parkplätze direkt in der Umgebung.
-                        </p>
-                    </div>
-                    <div class="flex flex-col gap-3">
-                        <a href="https://maps.google.com/?q=Herriger+Str.+25,+50374+Erftstadt" target="_blank" rel="noopener noreferrer" class="w-full bg-white hover:bg-gray-200 text-brandDark font-oswald text-center uppercase font-bold py-3.5 px-4 rounded transition-colors flex items-center justify-center">
-                            <i class="fa-solid fa-route mr-2 text-brandRed"></i> In Google Maps öffnen
-                        </a>
-                        <button id="downloadIcsBtn" class="w-full bg-brandDark hover:bg-black text-white border border-white/20 font-oswald uppercase font-bold py-3.5 px-4 rounded transition-colors flex items-center justify-center">
-                            <i class="fa-solid fa-calendar-plus mr-2 text-brandRed"></i> Termin in Kalender speichern
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Trainer-Team -->
-    <section id="coaches" class="py-20 bg-brandDark">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandRed font-oswald text-lg font-bold uppercase tracking-widest">Expertise & Erfahrung</span>
-                <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-tight mt-2">
-                    UNSERE <span class="text-brandRed">TRAINER</span>
-                </h2>
-                <p class="text-gray-400 mt-4 text-lg">Lerne von erfahrenen Trainern mit echter Profi-Erfahrung im Ring.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Coach Card 1 -->
-                <div class="bg-brandCard rounded-xl overflow-hidden border border-white/10 hover:border-brandRed/50 transition-all group">
-                    <div class="aspect-square bg-gray-800 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop" alt="Head Coach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-brandRed font-oswald text-sm font-bold uppercase tracking-widest">Head Coach</span>
-                        <h3 class="font-oswald text-2xl font-bold uppercase text-white mt-1">Lukokis Team</h3>
-                        <p class="text-gray-400 text-sm mt-2">
-                            Spezialisierung auf Wettkampf-Vorbereitung, Pratzenarbeit, Taktik und Ring-Intelligenz.
-                        </p>
-                        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
-                            <span><i class="fa-solid fa-award text-brandRed mr-1"></i> Profi-Erfahrung</span>
-                            <span><i class="fa-solid fa-shield text-brandRed mr-1"></i> Lizenzierte Trainer</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Coach Card 2 -->
-                <div class="bg-brandCard rounded-xl overflow-hidden border border-white/10 hover:border-brandRed/50 transition-all group">
-                    <div class="aspect-square bg-gray-800 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=800&auto=format&fit=crop" alt="Fitness Coach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-brandRed font-oswald text-sm font-bold uppercase tracking-widest">Athletik & Technik</span>
-                        <h3 class="font-oswald text-2xl font-bold uppercase text-white mt-1">Grundlagen & Fit</h3>
-                        <p class="text-gray-400 text-sm mt-2">
-                            Fokus auf saubere Grundschule, Beinarbeit, Konditionsaufbau und Koordination für Einsteiger.
-                        </p>
-                        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
-                            <span><i class="fa-solid fa-heart-pulse text-brandRed mr-1"></i> Ausdauer</span>
-                            <span><i class="fa-solid fa-dumbbell text-brandRed mr-1"></i> Kraft</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coach Card 3 -->
-                <div class="bg-brandCard rounded-xl overflow-hidden border border-white/10 hover:border-brandRed/50 transition-all group md:col-span-2 lg:col-span-1">
-                    <div class="aspect-square bg-gray-800 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1508215885820-4585e56135c8?q=80&w=800&auto=format&fit=crop" alt="Mental Coach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brandCard via-transparent to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-brandRed font-oswald text-sm font-bold uppercase tracking-widest">Sparring & Taktik</span>
-                        <h3 class="font-oswald text-2xl font-bold uppercase text-white mt-1">Kampf-Vorbereitung</h3>
-                        <p class="text-gray-400 text-sm mt-2">
-                            Gezieltes Sparringstraining unter sicheren Bedingungen für Fortgeschrittene und Kämpfer.
-                        </p>
-                        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
-                            <span><i class="fa-solid fa-masks-theater text-brandRed mr-1"></i> Sparring</span>
-                            <span><i class="fa-solid fa-brain text-brandRed mr-1"></i> Mentale Stärke</span>
+                    <div class="pt-4 border-t border-boxingBorder">
+                        <div class="flex items-center gap-2 text-boxingRed font-semibold text-sm">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Gratis Probetraining bei jedem Termin</span>
                         </div>
                     </div>
                 </div>
@@ -345,243 +253,263 @@
         </div>
     </section>
 
-    <!-- Section 4: Mitgliedsbeiträge -->
-    <section id="prices" class="py-20 bg-brandCard border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-brandRed font-oswald text-lg font-bold uppercase tracking-widest">Faire Konditionen</span>
-                <h2 class="font-oswald text-4xl sm:text-5xl font-bold uppercase tracking-tight mt-2">
-                    MITGLIEDS<span class="text-brandRed">BEITRÄGE</span>
-                </h2>
-                <p class="text-gray-400 mt-4 text-lg">Keine versteckten Kosten. Volle Transparenz.</p>
+    <!-- Trainer Section -->
+    <section id="trainer" class="py-20 px-4 sm:px-6 lg:px-8 bg-boxingDark border-b border-boxingBorder">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-boxingRed font-oswald uppercase tracking-widest text-sm">Coaching</span>
+                <h2 class="font-oswald text-3xl sm:text-5xl uppercase tracking-wide font-bold">Das Trainer-Team</h2>
+                <p class="text-zinc-400 max-w-xl mx-auto">Erfahrene Coaches mit Leidenschaft für echten Boxsport.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
-                <!-- Option 1 -->
-                <div class="bg-brandDark p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:border-white/30 transition-all">
-                    <div>
-                        <span class="text-gray-400 font-oswald text-sm font-bold uppercase tracking-wider">Unverbindlich</span>
-                        <h3 class="font-oswald text-3xl font-bold uppercase text-white mt-1">Probetraining</h3>
-                        <div class="my-6">
-                            <span class="font-oswald text-5xl font-bold text-brandRed">KOSTENLOS</span>
-                        </div>
-                        <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> 1x Schnuppertraining</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Kein Equipment nötig (Leihhandschuhe)</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Einfach vorbeikommen</li>
-                        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Coach Nathan -->
+                <div class="bg-boxingCard border border-boxingBorder rounded-2xl overflow-hidden group shadow-xl">
+                    <div class="h-80 overflow-hidden relative bg-zinc-900">
+                        <!-- Unsplash Athletic Coach Stock Photo -->
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=800&auto=format&fit=crop" alt="Coach Nathan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-boxingCard via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-boxingRed text-white text-xs font-bold uppercase px-3 py-1 rounded">Head Coach</span>
                     </div>
-                    <a href="#training" class="w-full bg-white/10 hover:bg-white/20 text-white font-oswald text-center font-bold uppercase py-3 rounded transition-colors">
-                        Jetzt Testen
-                    </a>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-oswald text-3xl uppercase tracking-wide">Coach Nathan</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Technik, Kondition und mentale Stärke. Nathan fordert jeden Athleten individuell – egal ob Anfänger beim Probetraining oder erfahrener Boxsportler.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between border-t border-boxingBorder">
+                            <span class="text-xs text-zinc-500 uppercase tracking-widest font-semibold">Instagram Profile</span>
+                            <a href="https://www.instagram.com/p/DUnoQQdDXSa/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-zinc-900 hover:bg-boxingRed text-zinc-200 hover:text-white px-4 py-2 rounded text-xs uppercase font-bold transition-all border border-boxingBorder">
+                                <i class="fa-brands fa-instagram text-base"></i> Beitrag ansehen
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Option 2 (Featured) -->
-                <div class="bg-brandDark p-8 rounded-xl border-2 border-brandRed red-glow flex flex-col justify-between relative transform md:-translate-y-2">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brandRed text-white text-xs font-oswald uppercase font-bold tracking-widest px-4 py-1 rounded-full shadow">
-                        Beliebteste Wahl
+                <!-- Coach Metou -->
+                <div class="bg-boxingCard border border-boxingBorder rounded-2xl overflow-hidden group shadow-xl">
+                    <div class="h-80 overflow-hidden relative bg-zinc-900">
+                        <!-- Unsplash Athletic Coach Stock Photo 2 -->
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=800&auto=format&fit=crop" alt="Coach Metou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-boxingCard via-transparent to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-boxingRed text-white text-xs font-bold uppercase px-3 py-1 rounded">Boxing Coach</span>
                     </div>
-                    <div>
-                        <span class="text-brandRed font-oswald text-sm font-bold uppercase tracking-wider">Monatlich</span>
-                        <h3 class="font-oswald text-3xl font-bold uppercase text-white mt-1">Mitgliedschaft</h3>
-                        <div class="my-6 flex items-baseline">
-                            <span class="font-oswald text-5xl font-bold text-white">40€</span>
-                            <span class="text-gray-400 font-medium ml-2">/ Monat</span>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-oswald text-3xl uppercase tracking-wide">Coach Metou</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Fokus auf saubere Beinarbeit, harte Kombinationen und echten Ring-Instinkt. Metou bringt dich bei jeder Trainingseinheit an dein nächstes Level.
+                        </p>
+                        <div class="pt-2 flex items-center justify-between border-t border-boxingBorder">
+                            <span class="text-xs text-zinc-500 uppercase tracking-widest font-semibold">Instagram Profile</span>
+                            <a href="https://www.instagram.com/p/DWn6g_7DT-O/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-zinc-900 hover:bg-boxingRed text-zinc-200 hover:text-white px-4 py-2 rounded text-xs uppercase font-bold transition-all border border-boxingBorder">
+                                <i class="fa-brands fa-instagram text-base"></i> Beitrag ansehen
+                            </a>
                         </div>
-                        <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Zugang zu allen Einheiten (Mo & Sa)</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Individuelle Trainingsbetreuung</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Fair & Flexibel</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mitgliedsbeiträge -->
+    <section id="preise" class="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950 border-b border-boxingBorder">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-boxingRed font-oswald uppercase tracking-widest text-sm">Transparenz</span>
+                <h2 class="font-oswald text-3xl sm:text-5xl uppercase tracking-wide font-bold">Mitgliedsbeitrag</h2>
+                <p class="text-zinc-400 max-w-lg mx-auto">Einfache und faire Preise ohne versteckte Kosten.</p>
+            </div>
+
+            <!-- Price Card -->
+            <div class="bg-boxingCard border-2 border-boxingRed/80 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-16 -top-16 w-48 h-48 bg-boxingRed/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="space-y-4 text-center md:text-left">
+                        <span class="bg-boxingRed text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded">Standard Mitgliedschaft</span>
+                        <h3 class="font-oswald text-4xl uppercase">Monatsbeitrag</h3>
+                        <p class="text-zinc-400 text-sm max-w-md">
+                            Keine versteckten Verträge, keine 10er-Karten oder Einzeltickets. Du zahlst einen transparenten Monatsbeitrag und kannst an allen Einheiten teilnehmen.
+                        </p>
+                        <ul class="space-y-2 text-sm text-zinc-300 pt-2 inline-block text-left">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-boxingRed"></i> Erstes Training <strong>100% Gratis Probetraining</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-boxingRed"></i> Montag & Samstag Training</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-boxingRed"></i> Coaching durch Nathan & Metou</li>
                         </ul>
                     </div>
-                    <a href="#training" class="w-full bg-brandRed hover:bg-brandRedDark text-white font-oswald text-center font-bold uppercase py-3.5 rounded transition-colors shadow-lg">
-                        Komm Vorbei
-                    </a>
+                    <div class="text-center bg-zinc-900/80 border border-boxingBorder p-8 rounded-2xl min-w-[240px]">
+                        <span class="text-xs uppercase text-zinc-400 tracking-wider font-semibold block mb-1">Beitrag</span>
+                        <div class="font-oswald text-6xl text-white font-bold">35 <span class="text-boxingRed text-3xl">€</span></div>
+                        <span class="text-xs text-zinc-500 block mt-2">Pro Monat / Flexibel</span>
+                        <div class="mt-6">
+                            <a href="#kontakt" class="block w-full bg-boxingRed text-white font-oswald uppercase py-3 rounded hover:bg-red-700 transition-all text-center">
+                                Probetraining machen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Stock Showcase -->
+    <section class="py-16 bg-boxingDark border-b border-boxingBorder">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="h-48 rounded-xl overflow-hidden border border-boxingBorder">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop" alt="Gallery 1" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="h-48 rounded-xl overflow-hidden border border-boxingBorder">
+                <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=600&auto=format&fit=crop" alt="Gallery 2" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="h-48 rounded-xl overflow-hidden border border-boxingBorder">
+                <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=600&auto=format&fit=crop" alt="Gallery 3" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="h-48 rounded-xl overflow-hidden border border-boxingBorder">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=600&auto=format&fit=crop" alt="Gallery 4" class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt & Anfahrt -->
+    <section id="kontakt" class="py-20 px-4 sm:px-6 lg:px-8 bg-boxingDark">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <div class="text-center space-y-3">
+                <span class="text-boxingRed font-oswald uppercase tracking-widest text-sm">Einfach vorbeikommen</span>
+                <h2 class="font-oswald text-3xl sm:text-5xl uppercase tracking-wide font-bold">Komm zum Training</h2>
+                <p class="text-zinc-400 max-w-xl mx-auto">Du brauchst dich nicht vorher anzumelden. Pack einfach deine Sachen ein und schau vorbei.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-boxingCard border border-boxingBorder p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 bg-boxingRed/10 border border-boxingRed/30 text-boxingRed rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-oswald text-xl uppercase">Adresse</h3>
+                    <p class="text-zinc-400 text-sm">Tanzschule Latus<br>Herriger Str. 25<br>50321 Erftstadt</p>
                 </div>
 
-                <!-- Option 3 -->
-                <div class="bg-brandDark p-8 rounded-xl border border-white/10 flex flex-col justify-between hover:border-white/30 transition-all">
-                    <div>
-                        <span class="text-gray-400 font-oswald text-sm font-bold uppercase tracking-wider">Flexibel</span>
-                        <h3 class="font-oswald text-3xl font-bold uppercase text-white mt-1">10er Karte</h3>
-                        <div class="my-6 flex items-baseline">
-                            <span class="font-oswald text-5xl font-bold text-white">120€</span>
-                            <span class="text-gray-400 font-medium ml-2">/ 10 Einheiten</span>
-                        </div>
-                        <ul class="space-y-3 text-gray-300 text-sm mb-8">
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Maximale Flexibilität</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Keinerlei Vertragsbindung</li>
-                            <li class="flex items-center"><i class="fa-solid fa-check text-brandRed mr-3"></i> Ideal für Schichtarbeiter</li>
-                        </ul>
+                <div class="bg-boxingCard border border-boxingBorder p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 bg-boxingRed/10 border border-boxingRed/30 text-boxingRed rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
-                    <a href="#training" class="w-full bg-white/10 hover:bg-white/20 text-white font-oswald text-center font-bold uppercase py-3 rounded transition-colors">
-                        Informationen anfragen
+                    <h3 class="font-oswald text-xl uppercase">E-Mail</h3>
+                    <p class="text-zinc-400 text-sm">Fragen?<br><a href="mailto:info@lukokis-boxing.de" class="text-boxingRed hover:underline font-semibold">info@lukokis-boxing.de</a></p>
+                </div>
+
+                <div class="bg-boxingCard border border-boxingBorder p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 bg-boxingRed/10 border border-boxingRed/30 text-boxingRed rounded-full flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h3 class="font-oswald text-xl uppercase">Social Media</h3>
+                    <p class="text-zinc-400 text-sm">Folge uns auf Instagram<br><a href="https://www.instagram.com/lukokisboxing" target="_blank" class="text-boxingRed hover:underline font-semibold">@lukokisboxing</a></p>
+                </div>
+            </div>
+
+            <!-- Call to action card -->
+            <div class="bg-gradient-to-r from-red-950/60 to-boxingCard border border-boxingRed/40 p-8 rounded-2xl text-center space-y-4">
+                <h3 class="font-oswald text-2xl sm:text-3xl uppercase">Dein erstes Training ist komplett kostenlos!</h3>
+                <p class="text-zinc-300 text-sm max-w-xl mx-auto">
+                    Komm am nächsten Montag um 18:00 Uhr oder Samstag um 12:00 Uhr vorbei. Nathan und Metou freuen sich auf dich!
+                </p>
+                <div class="pt-2">
+                    <a href="https://www.instagram.com/lukokisboxing" target="_blank" class="inline-flex items-center gap-2 bg-boxingRed text-white font-oswald px-6 py-3 rounded uppercase hover:bg-red-700 transition-all">
+                        <i class="fa-brands fa-instagram"></i> Fragen stellen auf Instagram
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5: Instagram & Kontakt Footer -->
-    <footer id="contact" class="bg-brandDark pt-20 pb-12 border-t border-white/10 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-12 mb-16">
-                <!-- Branding column -->
-                <div>
-                    <div class="flex items-center space-x-1 text-brandRed text-xs tracking-widest mb-1">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <span class="font-oswald text-3xl font-bold tracking-wider text-white">LUKOKIS <span class="text-brandRed">BOXING</span></span>
-                    <p class="text-gray-400 text-sm mt-4 leading-relaxed">
-                        Dein Ansprechpartner für professionelles Boxen in Erftstadt Lechenich.
-                    </p>
-                </div>
-
-                <!-- Quick info -->
-                <div>
-                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-4 border-b border-brandRed/40 pb-2 inline-block">
-                        Kontakt & Ort
-                    </h4>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-location-dot text-brandRed mt-1 mr-3"></i>
-                            <span>Tanzschule Latus, Herriger Str. 25<br>50374 Erftstadt</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fa-solid fa-envelope text-brandRed mr-3"></i>
-                            <span>Schreib uns eine DM auf Instagram</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Instagram CTA -->
-                <div>
-                    <h4 class="font-oswald text-xl font-bold uppercase text-white mb-4 border-b border-brandRed/40 pb-2 inline-block">
-                        Folge Uns
-                    </h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Aktuelle News, Trainingsvideos und Story-Updates direkt auf Instagram:
-                    </p>
-                    <a href="https://www.instagram.com/lukokisboxing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 hover:opacity-90 text-white font-oswald font-bold px-6 py-3 rounded uppercase text-sm tracking-wider transition-all shadow-lg w-full sm:w-auto">
-                        <i class="fa-brands fa-instagram text-xl mr-3"></i> @lukokisboxing folgen
-                    </a>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-zinc-950 border-t border-boxingBorder py-12 px-4 sm:px-6 lg:px-8 text-zinc-400 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="bg-boxingRed text-white font-oswald text-xl px-2.5 py-0.5 rounded">LB</div>
+                <span class="font-oswald text-lg uppercase tracking-wider text-white">Lukokis Boxing Erftstadt</span>
             </div>
-
-            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-                <p>&copy; <span id="year"></span> Lukokis Boxing. Alle Rechte vorbehalten.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-white transition-colors">Impressum</a>
-                    <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
-                </div>
+            <div class="flex flex-wrap items-center justify-center gap-6 font-semibold">
+                <a href="#start" class="hover:text-boxingRed transition-colors">Start</a>
+                <a href="#about" class="hover:text-boxingRed transition-colors">Über uns</a>
+                <a href="#zeiten" class="hover:text-boxingRed transition-colors">Zeiten</a>
+                <a href="#trainer" class="hover:text-boxingRed transition-colors">Trainer</a>
+                <a href="#preise" class="hover:text-boxingRed transition-colors">Beiträge</a>
+                <button onclick="openModal('impressum-modal')" class="hover:text-boxingRed transition-colors uppercase">Impressum</button>
+                <button onclick="openModal('datenschutz-modal')" class="hover:text-boxingRed transition-colors uppercase">Datenschutz</button>
+            </div>
+            <div class="text-xs text-zinc-500 text-center md:text-right">
+                © 2026 Lukokis Boxing. Alle Rechte vorbehalten.
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Script -->
+    <!-- Impressum Modal (Elias' Data) -->
+    <div id="impressum-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-boxingCard border border-boxingBorder max-w-2xl w-full rounded-2xl p-6 sm:p-8 relative space-y-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('impressum-modal')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="font-oswald text-3xl uppercase text-white">Impressum</h2>
+            <div class="space-y-4 text-zinc-300 text-sm leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-white uppercase text-xs text-boxingRed tracking-wider">Angaben gemäß § 5 DDG (Betreiber)</h3>
+                    <p class="font-semibold text-white">Elias</p>
+                    <p><br>Nordweg 25<br>50169 Kerpen<br>Deutschland</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase text-xs text-boxingRed tracking-wider">Kontakt</h3>
+                    <p>E-Mail: welias200418@gmail.com</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase text-xs text-boxingRed tracking-wider">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+                    <p>Elias<br>Nordweg 25<br>50169 Kerpen<br>Deutschland</p>
+                </div>
+                <div class="text-xs text-zinc-500 pt-2 border-t border-boxingBorder">
+                    Hinweis: Das Impressum wird bei Bedarf um weitere behördliche Angaben oder Steuernummern ergänzt.
+                </div>
+            </div>
+            <div class="pt-4 border-t border-boxingBorder text-right">
+                <button onclick="closeModal('impressum-modal')" class="bg-zinc-800 hover:bg-zinc-700 text-white font-oswald uppercase px-5 py-2 rounded text-sm">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div id="datenschutz-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-boxingCard border border-boxingBorder max-w-2xl w-full rounded-2xl p-6 sm:p-8 relative space-y-6 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('datenschutz-modal')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="font-oswald text-3xl uppercase text-white">Datenschutzerklärung</h2>
+            <div class="space-y-4 text-zinc-300 text-sm leading-relaxed">
+                <div>
+                    <h3 class="font-bold text-white uppercase text-xs text-boxingRed tracking-wider">1. Datenschutz auf einen Blick</h3>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase text-xs text-boxingRed tracking-wider">2. Hosting</h3>
+                    <p>Diese Website wird bei einem externen Dienstleister gehostet. Personenbezogene Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert (z.B. IP-Adressen in Server-Logfiles).</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase text-xs text-boxingRed tracking-wider">3. Instagram Verlinkungen</h3>
+                    <p>Auf unserer Website verlinken wir auf unser Profil bei Instagram (Meta Platforms Ireland Limited). Beim Anklicken der Verlinkung verlassen Sie unsere Seite.</p>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-boxingBorder text-right">
+                <button onclick="closeModal('datenschutz-modal')" class="bg-zinc-800 hover:bg-zinc-700 text-white font-oswald uppercase px-5 py-2 rounded text-sm">Schließen</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Dynamic Current Year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Navbar Toggle Logic
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuIcon = document.getElementById('menuIcon');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-xmark');
-            }
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('fa-xmark');
-                menuIcon.classList.add('fa-bars');
-            });
-        });
-
-        // Dynamic Next Session Countdown Widget
-        function updateNextSession() {
-            const now = new Date();
-            const currentDay = now.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
-            
-            // Monday = 1 (18:00), Saturday = 6 (12:00)
-            let targetDate = new Date();
-            let sessionTitle = "";
-
-            // Calculate next session
-            let monCandidate = new Date(now);
-            monCandidate.setDate(now.getDate() + ((1 + 7 - currentDay) % 7));
-            monCandidate.setHours(18, 0, 0, 0);
-            if (monCandidate <= now) {
-                monCandidate.setDate(monCandidate.getDate() + 7);
-            }
-
-            let satCandidate = new Date(now);
-            satCandidate.setDate(now.getDate() + ((6 + 7 - currentDay) % 7));
-            satCandidate.setHours(12, 0, 0, 0);
-            if (satCandidate <= now) {
-                satCandidate.setDate(satCandidate.getDate() + 7);
-            }
-
-            if (monCandidate < satCandidate) {
-                targetDate = monCandidate;
-                sessionTitle = "Montag um 18:00 Uhr";
-            } else {
-                targetDate = satCandidate;
-                sessionTitle = "Samstag um 12:00 Uhr";
-            }
-
-            document.getElementById('nextSessionText').textContent = sessionTitle;
-
-            const diff = targetDate - now;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-            const formatDays = String(days).padStart(2, '0');
-            const formatHours = String(hours).padStart(2, '0');
-            const formatMins = String(minutes).padStart(2, '0');
-
-            document.getElementById('countdownTimer').textContent = `${formatDays}d ${formatHours}h ${formatMins}m`;
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
         }
-
-        updateNextSession();
-        setInterval(updateNextSession, 60000);
-
-        // Download .ics Calendar File Logic
-        document.getElementById('downloadIcsBtn').addEventListener('click', () => {
-            const icsData = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Lukokis Boxing//Trainingszeiten//DE
-BEGIN:VEVENT
-SUMMARY:Lukokis Boxtraining
-DESCRIPTION:Reguläres Boxtraining bei Lukokis Boxing in Erftstadt.
-LOCATION:Tanzschule Latus, Herriger Str. 25, 50374 Erftstadt
-RRULE:FREQ=WEEKLY;BYDAY=MO,SA
-DTSTART:20261001T180000Z
-STATUS:CONFIRMED
-END:VEVENT
-END:VCALENDAR`;
-
-            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = window.URL.createObjectURL(blob);
-            link.setAttribute('download', 'lukokis-boxing-training.ics');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+        window.onclick = function(event) {
+            if (event.target.id === 'impressum-modal') closeModal('impressum-modal');
+            if (event.target.id === 'datenschutz-modal') closeModal('datenschutz-modal');
+        }
     </script>
+
 </body>
 </html>
